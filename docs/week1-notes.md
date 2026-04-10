@@ -1,5 +1,3 @@
 # Week 1 Notes
 
-# 10 Line explanation of branches and PRs
-
-A branch is a safe space to implement new changes to a repository without ruining the main branch. It is an actual branch away from the main branch that is separate until they are merged and differences are reconciled. Branches are typically used for every new feature/change in a repo. Pull requests are requests for other contributors to review your proposed change(s). They are important because it ensures that you get other eyes on your change(s) and it allows for other people working on a project to give you feedback and collaborate on your changes. Pull requests are the bread and butter of collaboration on a repo.
+A branch is a separate "version" of the repository that is created to implement a single feature or fix. It is similar to a tree branch, branching off a version of the repo, which is then merged into main. To merge a branch into main, a pull request must be received and reviewed by peers, and approved after any differences are reconciled. Branches are extremely useful for version control systems such as git because they allow for huge teams to collaborate on projects in an organized manner with accurate records. Branches allow for changes to to the original repo to be tested without ruining the whole project.
