@@ -90,36 +90,49 @@ Plain English Explanation of:
 - get-caller-identity: working
 
 ## YML Review
-(naming the workflow)
+
+```yaml
+# naming the workflow
 name: ci
-(when the workflow will be executed, in this case when changes are pushed)
+
+# when the workflow will be executed, in this case when changes are pushed
 on: [push]
-(start configuring jobs)
+
+# start configuring jobs
 jobs:
-(ci job)
- ci:
-    (runner of workflows, ubuntu latest version)
+
+  # ci job
+  ci:
+
+    # runner of workflows, ubuntu latest version
     runs-on: ubuntu-latest
-    (steps listed for ci job)
+
+    # steps listed for ci job
     steps:
-       (name of step followed by uses pulling in checkout action)
+
+      # uses pulls in the pre-built checkout action
       - name: Check out repository code
         uses: actions/checkout@v4
-        (name of step followed by uses pulling in node setup action)
+
+      # uses pulls in the pre-built node setup action
       - name: Installs Node
         uses: actions/setup-node@v4
-        (telling step what version of node to use)
+        # telling the step what version of node to use
         with:
           node-version: '20'
-          (name of step followed by run executing shell command to install npm)
+
+      # run executes a shell command to install dependencies
       - name: Install dependencies
         run: npm install
-        (name of step followed by run executing shell command to run lint)
+
+      # run executes a shell command to lint the code
       - name: Lint
         run: npm run lint
-        (name of step followed by run executing shell command to run npm test)
+
+      # run executes a shell command to run tests
       - name: Test
         run: npm test
+```
       
 
 ## End of day review
