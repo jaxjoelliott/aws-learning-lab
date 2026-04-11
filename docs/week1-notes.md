@@ -89,4 +89,10 @@ trigger: event that causes a workflow to start
 2. What broke and how did I fix it?
    I purposefully broke the Lint script in the package.json with an exit command.
 3. What do I still not fully understand?
-   I still do not fully understand the full power of CI/CD workflows.
+   I still do not fully understand the use cases for CI/CD workflows. Is it just to automatically test the repo/output certain things depending on what does/doesn't compile? I also do not understand the structure of .yml .yaml files, when do you use run or name or uses?
+   Answers:
+   - CI is to auto test every push so broken code never hits main.
+   - CD is the extension of CI: after tests pass, code is deployed (no manual deploys)
+   - name: label for readability, optional
+   - run: executes a shell command on runner
+   - uses: pulls in pre-built action
