@@ -7,7 +7,7 @@
     "doc": "docs"
   },
   "scripts": {
-    "lint": "exit 1",
+    "lint": "echo 'no lint yet'",
     "test": "echo 'no tests yet'"
   },
   "repository": {
