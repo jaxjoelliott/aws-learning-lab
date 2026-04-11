@@ -77,12 +77,12 @@ Must have .github/workflows dir
 .yml/.yaml file
 
 Plain English Explanation of:
-workflow: automated response to something happening in your project (an event)
-event: something that happens in your project that triggers a workflow, such as a push or PR
-job: set of steps in a workflow to be executed when the workflow is triggered, run in parallel by default
-step: ordered actions that depend on each other inside of a job, run command or uses action
-runner: a server that handles running a workflow when it is triggered
-trigger: event that causes a workflow to start
+- workflow: automated response to something happening in your project (an event)
+- event: something that happens in your project that triggers a workflow, such as a push or PR
+- job: set of steps in a workflow to be executed when the workflow is triggered, run in parallel by default
+- step: ordered actions that depend on each other inside of a job, run command or uses action
+- runner: a server that handles running a workflow when it is triggered
+- trigger: event that causes a workflow to start
 
 1. What did I build today?
    Today I built a GitHub Actions CI/CD workflow base that automatically passes to learn the structure and how to initialize a workflow on GitHub.
