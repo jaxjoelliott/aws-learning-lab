@@ -22,14 +22,13 @@
 
 ## Push
 
-**CLI:** `git push`
-**CLI (remote):** `git push --set-upstream origin new-branch-name`
+**CLI:** `git push (-set-upstream origin new-branch-name if needed)`
 **VS Code:** Source control panel, three dots next to changes, click push in menu
 
 ## Open a PR
 
 **CLI:** `gh pr create` then add title and body message
-**VS Code:** GitHub Pull Request extension, add title & comments, click request, then confirm
+**VS Code:** GitHub Pull Request extension,
 
 ## Merge a PR
 
