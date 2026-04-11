@@ -84,6 +84,11 @@ Plain English Explanation of:
 - runner: a server that handles running a workflow when it is triggered
 - trigger: event that causes a workflow to start
 
+## AWS CLI SETUP
+- Profile name: default
+- Region: us-east-1
+- get-caller-identity: working
+
 1. What did I build today?
    Today I built a GitHub Actions CI/CD workflow base that automatically passes to learn the structure and how to initialize a workflow on GitHub.
 2. What broke and how did I fix it?
