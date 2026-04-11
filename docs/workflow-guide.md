@@ -40,3 +40,8 @@
 **CLI (local):** `git branch -d branch-name`
 **CLI (remote):** `git push origin --delete branch-name`
 **VS Code:** Command palette (Cmd+Shift+P), type "Git: Delete Branch"
+
+## View branches
+
+**CLI (local):## `git branch`
+**CLI (remote):## `git branch -r`
