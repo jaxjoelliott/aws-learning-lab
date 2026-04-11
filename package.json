@@ -1,0 +1,25 @@
+{
+  "name": "aws-learning-lab",
+  "version": "1.0.0",
+  "description": "A 12-week structured build program learning basics of AWS serverless development documented in one Github repository.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "lint": "echo 'no lint yet'",
+    "test": "echo 'no tests yet'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jaxjoelliott/aws-learning-lab.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/jaxjoelliott/aws-learning-lab/issues"
+  },
+  "homepage": "https://github.com/jaxjoelliott/aws-learning-lab#readme"
+}
