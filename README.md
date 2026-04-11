@@ -1,11 +1,10 @@
 # AWS Learning Lab
 
-My post-grad journey learning basics of AWS serverless development documented in one Github repository.
+A 12-week structured build program learning basics of AWS serverless development documented in one Github repository.
 
-Purpose:
+Purpose: This plan is designed to make me job-ready for a junior cloud/serverless developer role in 3-4 months.
 
-Tech Stack:
+Tech Stack: Lambda, DynamoDB, S3, Terraform, API Gateway
 
-Goals:
-
-Start date: April 10, 2026
+Goals: 2-3 production-quality AWS serverless applications with aforementioned tech stack, infrastructure as code, clean GitHub portfolio, comprehensive testing, weekly habits, Well-Architectured reviews, establish professional workflows, establish career durability that AI can't replace.
+git
