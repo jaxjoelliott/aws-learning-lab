@@ -12,11 +12,14 @@
 
 ## Commit
 
-**CLI:** 'git commit -m "Commit message"
-**VS Code:** Source Control panel, click Commit
+**CLI:** `git commit -m "Commit message"`
+**VS Code:** Source Control panel, click Commit, enter commit message in file that pops up, then click commit in bottom right
 ...
 
 ## Push
+
+**CLI:** `git
+**VS Code:**
 
 ...
 
