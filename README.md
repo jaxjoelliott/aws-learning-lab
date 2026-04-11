@@ -1,4 +1,5 @@
 # AWS Learning Lab
+[![ci](https://github.com/jaxjoelliott/aws-learning-lab/actions/workflows/ci.yml/badge.svg)](https://github.com/jaxjoelliott/aws-learning-lab/actions/workflows/ci.yml)
 
 A 12-week structured build program learning basics of AWS serverless development documented in one Github repository.
 
