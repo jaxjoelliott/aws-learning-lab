@@ -22,8 +22,8 @@
 
 ## Open a PR
 
-**CLI:** `
-**VS Code:**
+**CLI:** `gh pr create` then add title and body message
+**VS Code:** GitHub Pull Request extension,
 
 ## Merge a PR
 
