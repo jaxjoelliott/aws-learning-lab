@@ -1,5 +1,14 @@
 # Week 1 Notes
 
+## Brain dump anything something clicks, errors/fxes, new commands
+## End of session — answer these three questions in your notes before you close the laptop:
+
+1. What did I build today?
+2. What broke and how did I fix it?
+3. What do I still not fully understand?
+
+Day 1: (Friday)
+
 A branch is a separate "version" of the repository that is created to implement a single feature or fix. It is similar to a tree branch, branching off a version of the repo, which is then merged into main. To merge a branch into main, a pull request must be received and reviewed by peers, and approved after any differences are reconciled. Branches are extremely useful for version control systems such as git because they allow for huge teams to collaborate on projects in an organized manner with accurate records. Branches allow for changes to to the original repo to be tested without ruining the whole project.
 
 About Git: https://docsgithubcom/en/get-started/using-git/about-git
@@ -57,3 +66,25 @@ Conflicts will be shown to be addressed before merging
 Delete your branch:
 After merging, delete your branch. This indicates work on branch is complete and prevents accidental work
 Deleted branches can be restores and pull/commit history won’t be deleted
+
+Day 2: (Saturday)
+
+GitHub Actions CI/CD platform (continuous integration/continuous delivery)
+Autoamtes build, test, and deployment pipeline
+Templates available
+Must have .github/workflows dir
+.yml/.yaml file
+
+Plain English Explanation of:
+workflow:
+job:
+step:
+runner:
+trigger:
+
+1. What did I build today?
+   Today I built a GitHub Actions CI/CD workflow base that automatically passes to learn the structure and how to initialize a workflow on GitHub.
+2. What broke and how did I fix it?
+   I purposefully broke the Lint script in the package.json with an exit command.
+3. What do I still not fully understand?
+   I still do not fully understand the full power of CI/CD workflows.
