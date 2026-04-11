@@ -89,6 +89,41 @@ Plain English Explanation of:
 - Region: us-east-1
 - get-caller-identity: working
 
+## YML Review
+(naming the workflow)
+name: ci
+(when the workflow will be executed, in this case when changes are pushed)
+on: [push]
+(start configuring jobs)
+jobs:
+(ci job)
+ ci:
+    (runner of workflows, ubuntu latest version)
+    runs-on: ubuntu-latest
+    (steps listed for ci job)
+    steps:
+       (name of step followed by uses pulling in checkout action)
+      - name: Check out repository code
+        uses: actions/checkout@v4
+        (name of step followed by uses pulling in node setup action)
+      - name: Installs Node
+        uses: actions/setup-node@v4
+        (telling step what version of node to use)
+        with:
+          node-version: '20'
+          (name of step followed by run executing shell command to install npm)
+      - name: Install dependencies
+        run: npm install
+        (name of step followed by run executing shell command to run lint)
+      - name: Lint
+        run: npm run lint
+        (name of step followed by run executing shell command to run npm test)
+      - name: Test
+        run: npm test
+      
+
+## End of day review
+
 1. What did I build today?
    Today I built a GitHub Actions CI/CD workflow base that automatically passes to learn the structure and how to initialize a workflow on GitHub.
 2. What broke and how did I fix it?
