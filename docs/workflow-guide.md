@@ -5,6 +5,11 @@
 **CLI:** `git checkout -b branch-name`
 **VS Code:** Bottom left corner, click the branch name, select "Create new branch"
 
+## Switch to an existing branch
+
+**CLI:** `git checkout branch-name`
+**VS Code:** Bottom left corner, click branch name, select branch from list
+
 ## Stage changes
 
 **CLI:** `git add .`
@@ -17,7 +22,7 @@
 
 ## Push
 
-**CLI:** `git push (-set-upstream origin new-branch-name if needed)1
+**CLI:** `git push (-set-upstream origin new-branch-name if needed)`
 **VS Code:** Source control panel, three dots next to changes, click push in menu
 
 ## Open a PR
@@ -27,8 +32,11 @@
 
 ## Merge a PR
 
-...
+**CLI:** `gh pr merge` then select squash, merge, or rebase
+**VS Code:** GitHub Pull Requests extension, open the PR, click "Merge Pull Request" button
 
 ## Delete a branch
 
-...
+**CLI (local):** `git branch -d branch-name`
+**CLI (remote):** `git push origin --delete branch-name`
+**VS Code:** Command palette (Cmd+Shift+P), type "Git: Delete Branch"
