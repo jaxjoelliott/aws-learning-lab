@@ -9,7 +9,6 @@ Purpose: This plan is designed to make me job-ready for a junior cloud/serverles
 Tech Stack: Lambda, DynamoDB, S3, Terraform, API Gateway
 
 Goals: 2-3 production-quality AWS serverless applications with aforementioned tech stack, infrastructure as code, clean GitHub portfolio, comprehensive testing, weekly habits, Well-Architectured reviews, establish professional workflows, establish career durability that AI can't replace.
-git
 
 ## Branch Strategy
 
