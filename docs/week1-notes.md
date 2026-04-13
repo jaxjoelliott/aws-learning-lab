@@ -1,151 +1,237 @@
 # Week 1 Notes
 
-## Brain dump anything something clicks, errors/fxes, new commands
+> At the end of each session, answer the three reflection questions before closing the laptop.
 
-## End of session — answer these three questions in your notes before you close the laptop:
+---
 
-1. What did I build today?
-2. What broke and how did I fix it?
-3. What do I still not fully understand?
+## Day 1 — Git & GitHub Foundations
 
-Day 1: (Friday)
+### What is a Branch?
 
-A branch is a separate "version" of the repository that is created to implement a single feature or fix. It is similar to a tree branch, branching off a version of the repo, which is then merged into main. To merge a branch into main, a pull request must be received and reviewed by peers, and approved after any differences are reconciled. Branches are extremely useful for version control systems such as git because they allow for huge teams to collaborate on projects in an organized manner with accurate records. Branches allow for changes to to the original repo to be tested without ruining the whole project.
+A branch is a separate "version" of the repository created to implement a single feature or fix. It branches off the repo similarly to a tree branch, and is merged back into main via a pull request. Branches allow huge teams to collaborate in an organized manner — changes can be tested without affecting the whole project.
 
-About Git: https://docsgithubcom/en/get-started/using-git/about-git
+**Reference:** [About Git](https://docs.github.com/en/get-started/using-git/about-git)
 
-Basic Git Commands
+### Basic Git Commands
 
-Git init initializes new Git repository and begins tracking that directory
-Git clone creates a local copy of a remote repository
-Git add stages any changes and changes will be part of next snapshot
-Git commit saves snapshot created with add to the project history and completes the change-tracking
-Git status shows status of changes as untracked, modified, or staged
-Git branch shows the branches being worked on locally
-Git merge merges lines of development together, and combines changes of two distinct branches
-Git pull updates the local development line with the updates from the remote counterpart
-Git push updates the remote repository with any commits that have been made locally
+| Command      | Description                                     |
+| ------------ | ----------------------------------------------- |
+| `git init`   | Initializes a new Git repository                |
+| `git clone`  | Creates a local copy of a remote repository     |
+| `git add`    | Stages changes for the next snapshot            |
+| `git commit` | Saves the staged snapshot to project history    |
+| `git status` | Shows changes as untracked, modified, or staged |
+| `git branch` | Shows branches being worked on locally          |
+| `git merge`  | Merges two branches together                    |
+| `git pull`   | Updates local branch with remote changes        |
+| `git push`   | Updates remote repository with local commits    |
 
-Models for collaboration
+### Collaboration Models
 
-Shared repository
-Individuals and teams are designated with read, write, or admin access
-In combination with protected branches, this allows teams to progress quickly with GitHub
-Fork and pull
-Better for open source projects because managing permissions can be challenging
-Allows anybody viewing the project to contribute by forking or copying the project under their personal account, giving them full control to implement fixes or new features
-Forked work is either kept separate or can be sent back to the original project with a pull request, where changes will be reviewed before being merged, similarly to a branch
+**Shared Repository**
 
-Github Flow: https://docsgithubcom/en/get-started/using-github/github-flow
+- Team members are given read, write, or admin access
+- Works well with protected branches for fast-moving teams
 
-Lightweight and branch-based workflow, useful for everyone, used by GitHub
+**Fork and Pull**
 
-Following GitHub flow
-Create a branch with a descriptive name:
-Allows for a safe workspace that doesn’t affect default branch
+- Better for open source — anyone can fork and contribute
+- Changes are sent back via PR and reviewed before merging
 
-Make changes to the repository:
-Changes will not end up on default branch until the branches are merged
-Commit and push changes to branch
-Each commit ideally contains an isolated and completed change
-Committing and pushing changes allows for work to be backed up to remote storage, accessible by any device
-One branch per task, allows for easy tracking of changes, and less holdups
+### GitHub Flow
 
-Create a pull request:
-Asks collaborators for feedback on changes
-Can mark as draft for early feedback
-Include summary and changes and what problems they solve
-Can add comments to specific lines
+**Reference:** [GitHub Flow](https://docs.github.com/en/get-started/using-github/github-flow)
 
-Address review comments:
-Reviewers will leave questions and comments on PRs, address them and commit in response
+1. **Create a branch** — safe workspace that doesn't affect main
+2. **Make changes** — commits stay isolated until merged
+3. **Commit and push** — backs up work to remote, accessible anywhere
+4. **Open a PR** — request feedback, describe what changed and why
+5. **Address review comments** — commit responses to reviewer feedback
+6. **Merge** — changes appear on default branch, conflicts resolved first
+7. **Delete branch** — signals work is complete, prevents accidental commits
 
-Merge your PR:
-Merge PR after it is approved, and your changes will appear on the default branch.
-Conflicts will be shown to be addressed before merging
+---
 
-Delete your branch:
-After merging, delete your branch. This indicates work on branch is complete and prevents accidental work
-Deleted branches can be restores and pull/commit history won’t be deleted
+### Reflections
 
-Day 2: (Saturday)
+**What did I build?** Practiced full Git workflow in both CLI and VS Code. Created aws-learning-lab repo with README and .gitignore.
 
-GitHub Actions CI/CD platform (continuous integration/continuous delivery)
-Automates build, test, and deployment pipeline
-Templates available
-Must have .github/workflows dir
-.yml/.yaml file
+**What broke?** N/A — first day setup.
 
-Plain English Explanation of:
-- workflow: automated response to something happening in your project (an event)
-- event: something that happens in your project that triggers a workflow, such as a push or PR
-- job: set of steps in a workflow to be executed when the workflow is triggered, run in parallel by default
-- step: ordered actions that depend on each other inside of a job, run command or uses action
-- runner: a server that handles running a workflow when it is triggered
-- trigger: event that causes a workflow to start
+**What do I still not fully understand?** N/A — concepts clicked.
 
-## AWS CLI SETUP
-- Profile name: default
-- Region: us-east-1
-- get-caller-identity: working
+---
 
-## YML Review
+## Day 2 — GitHub Actions & CI Pipeline
+
+### GitHub Actions
+
+CI/CD platform that automates the build, test, and deployment pipeline. Workflows live in `.github/workflows/` as `.yml` files.
+
+**Plain English Definitions**
+
+| Term     | Definition                                                                       |
+| -------- | -------------------------------------------------------------------------------- |
+| workflow | Automated response to an event in your project                                   |
+| event    | Something that happens in your project that triggers a workflow (push, PR)       |
+| job      | Set of steps executed when a workflow is triggered — runs in parallel by default |
+| step     | A single task inside a job — either a `run` command or a `uses` action           |
+| runner   | A server that handles running the workflow when triggered                        |
+| trigger  | The event that causes a workflow to start                                        |
+
+### AWS CLI Setup
+
+- **Profile name:** default
+- **Region:** us-east-1
+- **Health check:** `aws sts get-caller-identity` — working ✅
+
+### ci.yml — Annotated
 
 ```yaml
 # naming the workflow
 name: ci
 
-# when the workflow will be executed, in this case when changes are pushed
+# trigger: runs on every push to any branch
 on: [push]
 
-# start configuring jobs
 jobs:
-
-  # ci job
   ci:
-
-    # runner of workflows, ubuntu latest version
+    # runner: fresh Ubuntu server spun up by GitHub
     runs-on: ubuntu-latest
 
-    # steps listed for ci job
     steps:
-
-      # uses pulls in the pre-built checkout action
+      # uses: pulls in pre-built checkout action
       - name: Check out repository code
         uses: actions/checkout@v4
 
-      # uses pulls in the pre-built node setup action
-      - name: Installs Node
+      # uses: pulls in pre-built Node setup action
+      - name: Install Node
         uses: actions/setup-node@v4
-        # telling the step what version of node to use
         with:
-          node-version: '20'
+          node-version: '20' # pinned for deterministic builds
 
-      # run executes a shell command to install dependencies
+      # run: shell commands executed directly on the runner
       - name: Install dependencies
         run: npm install
 
-      # run executes a shell command to lint the code
       - name: Lint
         run: npm run lint
 
-      # run executes a shell command to run tests
       - name: Test
         run: npm test
 ```
-      
 
-## End of day review
+**run vs uses vs name**
 
-1. What did I build today?
-   Today I built a GitHub Actions CI/CD workflow base that automatically passes to learn the structure and how to initialize a workflow on GitHub.
-2. What broke and how did I fix it?
-   I purposefully broke the Lint script in the package.json with an exit command.
-3. What do I still not fully understand?
-   I still do not fully understand the use cases for CI/CD workflows. Is it just to automatically test the repo/output certain things depending on what does/doesn't compile? I also do not understand the structure of .yml .yaml files, when do you use run or name or uses?
-   Answers:
-   - CI is to auto test every push so broken code never hits main.
-   - CD is the extension of CI: after tests pass, code is deployed (no manual deploys)
-   - name: label for readability, optional
-   - run: executes a shell command on runner
-   - uses: pulls in pre-built action
+- `name` — label for readability in the Actions UI, optional
+- `run` — executes a shell command directly on the runner
+- `uses` — pulls in a pre-built action from the GitHub marketplace
+
+**CI vs CD**
+
+- CI — auto tests every push so broken code never hits main
+- CD — extends CI: after tests pass, code is automatically deployed to AWS (no manual deploys)
+
+---
+
+### Reflections
+
+**What did I build?** GitHub Actions CI pipeline that automatically runs lint and tests on every push.
+
+**What broke?** Intentionally broke the lint script with `exit 1` to see the pipeline fail. Fixed it and watched it go green.
+
+**What do I still not fully understand?** Initially unclear on CI/CD use cases and when to use `run` vs `uses` — answered above.
+
+---
+
+## Day 3 — AWS CLI & Cloud Foundations
+
+### AWS CLI Exploration
+
+All commands ran successfully. Empty output confirms CLI is authenticated and talking to AWS correctly.
+
+```bash
+aws s3 ls              # no output — no buckets created yet
+aws lambda list-functions  # no output — no functions created yet
+aws iam list-users     # no output — no IAM users created yet
+aws dynamodb list-tables   # no output — no tables created yet
+```
+
+### AWS Skill Builder — Modules 1–3
+
+**Key Concepts**
+
+**Serverless** — not having to manage servers to use services. AWS handles the infrastructure.
+
+**IAM (Identity and Access Management)** — controls who can access your AWS account and what they can do. Handles both authentication and authorization.
+
+**Container** — holds everything an app needs to run in a portable unit: code, runtime, dependencies, and config. Solves the "it works on my machine" problem by carrying its own environment.
+
+**Container orchestration** — automated management of containers at scale across multiple servers (starting, stopping, scaling, routing). Not needed for a serverless Lambda stack.
+
+### AWS Compute Services
+
+| Service               | Description                                                                    |
+| --------------------- | ------------------------------------------------------------------------------ |
+| Amazon EC2            | Virtual server in the cloud — you manage OS, CPU, RAM, storage                 |
+| Amazon Lambda         | Function as a service — configure a trigger, AWS runs it automatically         |
+| AWS Elastic Beanstalk | "Deploy my app" service — give it code and config, it provisions automatically |
+| Amazon Lightsail      | Pre-configured virtual servers — EC2 without configuration overhead            |
+| AWS Batch             | Designed for heavy batch workloads                                             |
+| AWS Outposts          | AWS hardware physically installed in your own data center                      |
+
+**Lambda vs EC2**
+
+|            | Lambda                                        | EC2                                         |
+| ---------- | --------------------------------------------- | ------------------------------------------- |
+| Management | You write the function and configure triggers | You manage the server                       |
+| Cost       | Pay only for execution time                   | Pay 24/7 whether it's running or not        |
+| Use case   | Event-driven, short-lived functions           | Long-running workloads, full control needed |
+
+### Container Options
+
+| Service    | Description                                                                                    |
+| ---------- | ---------------------------------------------------------------------------------------------- |
+| Amazon ECS | Manages and monitors containers across a cluster                                               |
+| Amazon EKS | Kubernetes on AWS — more control than ECS                                                      |
+| Fargate    | Serverless compute for containers — ECS/EKS handles orchestration, Fargate handles the servers |
+
+### Messaging & Networking
+
+| Service    | Description                                                     |
+| ---------- | --------------------------------------------------------------- |
+| Amazon SQS | Holds requests in a queue until a service is ready — pull model |
+| Amazon SNS | Sends messages to all subscribers simultaneously — push model   |
+| Amazon ELB | Distributes incoming traffic across EC2 instances               |
+
+**SQS vs SNS:** SQS = pull (consumer takes when ready), SNS = push (sends to all subscribers immediately)
+
+---
+
+### DVA-C02 Guide Skim
+
+**Domains and Scoring**
+Scaled score 100-1000, passing score is 720
+
+- Development with AWS Services (32%)
+- Security (26%)
+- Deployment (24%)
+- Troubleshooting and Optimization (18%)
+
+## **Topics I haven't heard of**
+
+- Idempotency
+- Synchronous and asynchronous patterns
+- Fault tolerence/resilient applications
+- Database consistency models
+- Serializing and deserializing data
+- IaC
+- Root cause analysis
+
+### Reflections
+
+**What did I build?** Lambda and SQS demos in the AWS console. Added definitions to week1-notes.
+
+**What broke?** Lambda function failed because the IAM role wasn't configured correctly. Added the correct SQS execution role and it worked.
+
+**What do I still not fully understand?** Container orchestration — answered above. Fargate — clarified: serverless compute layer for containers, not relevant to this plan.
