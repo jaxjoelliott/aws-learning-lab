@@ -244,5 +244,23 @@ Scaled score 100-1000, passing score is 720
 - target: scales Javascript features up or down for better compatability for browser. Also changes lib default value
 - module: lets you pick the module for the program. A module is a grouping of variables, functions, etc that is private in scope
 - outDir: allows you to specify where files will be output to
+- rootDir: defines root directory
 
-Installed Prettier and ESLint to project
+### devDependencies vs dependencies
+
+- devDependencies for development tools, dependencies for runtime dependencies
+
+### Installed Prettier and ESLint to project
+
+ESLint: static analysis tool for JavaScript and TypeScript that identifies and fixes code problems, such as syntax errors, bugs, and inconsistencies.
+
+Prettier: Code formatter ensures outputted code conforms to a consistent style.
+
+### Reflections
+
+**What did I build?** Configured ESLint and Prettier for use in my repo. Added util functions for TypeScript.
+
+**What broke?** Husky was struggling with finding Node/npx, had to resolve differences of husky pre-commit and week1-notes.md between branch and main, mainly formatting inconsistencies.
+
+**What do I still not fully understand?**
+TypeScript syntax, need to learn basics so I can review code better.
