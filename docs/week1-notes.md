@@ -235,3 +235,14 @@ Scaled score 100-1000, passing score is 720
 **What broke?** Lambda function failed because the IAM role wasn't configured correctly. Added the correct SQS execution role and it worked.
 
 **What do I still not fully understand?** Container orchestration — answered above. Fargate — clarified: serverless compute layer for containers, not relevant to this plan.
+
+## Day 4 - TypeScript + Node.js project template
+
+### Important Tsconfig flags:
+
+- Strict: enhances type checking
+- target: scales Javascript features up or down for better compatability for browser. Also changes lib default value
+- module: lets you pick the module for the program. A module is a grouping of variables, functions, etc that is private in scope
+- outDir: allows you to specify where files will be output to
+
+Installed Prettier and ESLint to project
