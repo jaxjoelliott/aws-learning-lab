@@ -245,4 +245,15 @@ Scaled score 100-1000, passing score is 720
 - module: lets you pick the module for the program. A module is a grouping of variables, functions, etc that is private in scope
 - outDir: allows you to specify where files will be output to
 
+### ESLint and Prettier
+
+- ESLint is a code analysis tool that automatically identifies, reports, and fixes errors, bugs, and inconsistencies in JavaScript and TypeScript. Enforces coding standards.
+- Prettier code formatter that removes all original styling and ensures consistent style for outputted code.
+
 Installed Prettier and ESLint to project
+
+### Reflections
+
+**What did I build?**
+**What broke?**
+**What do I still not fully understand?**
