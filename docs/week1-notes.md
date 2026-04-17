@@ -273,6 +273,8 @@ jest.fn() creates a fake function that tracks how it was called.
 Use expect(mock).toHaveBeenCalledWith() to verify it was called with the right arguments.
 This pattern is how you test Lambda handlers without hitting real AWS services.
 
+### Reflections
+
 **What did I build?** 9 unit tests for all 3 utils.ts functions, happy case, edge case, error case.
 
 **What broke?** Unit test for chunkArray returning an empty array when given an empty array, accidentally had an empty array within an empty array for .toEqual.
@@ -285,8 +287,18 @@ Downloaded and setup Postman environment with API GET, POST, and DELETE placehol
 
 Setup dotenv with repo
 
-**What did I build?**
+### Week 1 Key Takeaways
 
-**What broke?**
+1. Can you perform the full Git/GitHub workflow in both VS Code and CLI? - clone/init repo on local machine, make branch, make changes, stage changes, commit changes, create pr, merge pr, delete branch
+2. Can you explain what GitHub Actions does in plain English? - automates testing/deployment of project, runs automatically on every push.
+3. Can you run an AWS CLI command using your configured profile? - aws sts get-caller-identity prints my UserID, account ID, and resource name being used (IAM in this instance)
+4. When would you choose VS Code UI vs CLI for a task? - VS Code UI for when lots of different parts and it helps to visualize hierarchy, cli for quick/single file changes/quick pushing
+5. What is the difference between "AI helped me" and "I understand it"? - AI helped me is when I just prompt ai and have it tell me what to do step by step and don;t think at all. I understand it is when I read docs/experiment on my own, and spend a decent chunk of time figuring things out on my own and trial and error, then asking for ai to help as last resort, but I can answer questions and have good idea of what I did/why.
 
-**What do I still not fully understand?**
+### Reflections
+
+**What did I build?** Built Postman environment and API calls, as well as setup dotenv for repo.
+
+**What broke?** baseURL variable did not work because I typoed variable name in environment.
+
+**What do I still not fully understand?** The whole entire Postman workflow, got basics down but need to get actual reps with a real project.
