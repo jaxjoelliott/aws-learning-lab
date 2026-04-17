@@ -264,3 +264,13 @@ Prettier: Code formatter ensures outputted code conforms to a consistent style.
 
 **What do I still not fully understand?**
 TypeScript syntax, need to learn basics so I can review code better.
+
+## Day 5 - Jest Installation and Unit Testing
+
+Wrote unit tests for utility functions from Day 4 in utils.ts
+
+**What did I build?** 9 unit tests for all 3 utils.ts functions, happy case, edge case, error case.
+
+**What broke?** Unit test for chunkArray returning an empty array when given an empty array, accidentally had an empty array within an empty array for .toEqual.
+
+**What do I still not fully understand?**
