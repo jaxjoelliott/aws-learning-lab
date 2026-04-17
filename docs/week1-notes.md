@@ -280,3 +280,13 @@ This pattern is how you test Lambda handlers without hitting real AWS services.
 **What do I still not fully understand?** How to write unit tests for error cases that aren't obvious errors - what could go wrong with this input?
 
 ## Day 6 — Postman + environment variables + week 1 wrap-up
+
+Downloaded and setup Postman environment with API GET, POST, and DELETE placeholders.
+
+Setup dotenv with repo
+
+**What did I build?**
+
+**What broke?**
+
+**What do I still not fully understand?**
