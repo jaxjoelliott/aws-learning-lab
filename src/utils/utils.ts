@@ -13,3 +13,10 @@ export function chunkArray<T>(arr: T[], size: number): T[][] {
   }
   return chunks;
 }
+
+export function sendNotification(
+  message: string,
+  callback: (msg: string) => void,
+): void {
+  callback(message);
+}
