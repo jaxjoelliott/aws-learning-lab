@@ -1,4 +1,9 @@
-import { validateEmail, dateToString, chunkArray } from './utils';
+import {
+  validateEmail,
+  dateToString,
+  chunkArray,
+  sendNotification,
+} from './utils';
 
 test('dateToString returns date as string', () => {
   expect(dateToString(new Date('2026-01-01'))).toBe('2026-01-01T00:00:00.000Z');
@@ -34,4 +39,10 @@ test('chunkArray returns empty array when given empty array', () => {
 
 test('chunkArray handles chunk size larger than array', () => {
   expect(chunkArray([1, 2, 3], 5)).toEqual([[1, 2, 3]]);
+});
+
+test('sendNotification mocks callback function', () => {
+  const mockCallback = jest.fn();
+  sendNotification('Hello, World!', mockCallback);
+  expect(mockCallback).toHaveBeenCalledWith('Hello, World!');
 });
