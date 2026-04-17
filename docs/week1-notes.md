@@ -299,6 +299,16 @@ Setup dotenv with repo
 
 **What did I build?** Built Postman environment and API calls, as well as setup dotenv for repo.
 
-**What broke?** baseURL variable did not work because I typoed variable name in environment.
+**What broke?** baseURL variable did not work because I mistyped the variable name in environment.
 
 **What do I still not fully understand?** The whole entire Postman workflow, got basics down but need to get actual reps with a real project.
+
+## Weekly Reflection Questions
+
+1. Wha did I build this week? - Full Git workflow in both CLI and VS Code. Created repo. Github Actions CI pipeline running lint and tests on push. Lambda and SQS demos in console, ESLint and Prettier configured, 10 unit tests, postman environment, dotenv2
+2. What was harder than expected? - Reading the docs and implementing that information into building out on my own. Resisting urge to vibe code.
+3. What was easier than expected? - Building the structure/hierarchy of the repo, folders/files are in self-explanatory directories.
+4. What do I understand now that I didn't before? - I now understand the whole git workflow and how to do it, basics of aws services and how typescript works, and prettier and eslint.
+5. What questions do I still have? - I still have questions about apis, more specifically how they work in practice/what is the http actually for? Need to do a project to fully understand.
+6. What would I do differently? - Watch more videos on specific topics. Watched one on jest mock tests and it made way more sense than just docs.
+7. Am I on track? Yes - see above takeaways.
