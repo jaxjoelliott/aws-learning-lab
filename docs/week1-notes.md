@@ -299,7 +299,7 @@ Setup dotenv with repo
 
 **What did I build?** Built Postman environment and API calls, as well as setup dotenv for repo.
 
-**What broke?** baseURL variable did not work because I typoed variable name in environment.
+**What broke?** baseURL variable did not work because I mistyped the variable name in environment.
 
 **What do I still not fully understand?** The whole entire Postman workflow, got basics down but need to get actual reps with a real project.
 
