@@ -278,3 +278,5 @@ This pattern is how you test Lambda handlers without hitting real AWS services.
 **What broke?** Unit test for chunkArray returning an empty array when given an empty array, accidentally had an empty array within an empty array for .toEqual.
 
 **What do I still not fully understand?** How to write unit tests for error cases that aren't obvious errors - what could go wrong with this input?
+
+## Day 6 — Postman + environment variables + week 1 wrap-up
