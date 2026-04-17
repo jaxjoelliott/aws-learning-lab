@@ -5,6 +5,6 @@
     "module": "CommonJS",
     "outDir": "./dist",
     "rootDir": "./src",
-    "types": ["jest"]
+    "types": ["jest", "node"]
   }
 }
