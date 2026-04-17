@@ -1,23 +1,30 @@
 # AWS Learning Lab
+![ci](your-badge-here)
 
-[![ci](https://github.com/jaxjoelliott/aws-learning-lab/actions/workflows/ci.yml/badge.svg)](https://github.com/jaxjoelliott/aws-learning-lab/actions/workflows/ci.yml)
+12-week AWS serverless developer program targeting junior cloud readiness 
+and AWS Certified Developer Associate (DVA-C02).
 
-A 12-week structured build program learning basics of AWS serverless development documented in one Github repository.
+## Stack
+Lambda · API Gateway · DynamoDB · S3 · Terraform · GitHub Actions · Jest · Playwright
 
-Purpose: This plan is designed to make me job-ready for a junior cloud/serverless developer role in 3-4 months.
+## What gets built
+2–3 production-grade serverless applications with infrastructure as code, 
+comprehensive testing, CI/CD pipelines, and Well-Architected reviews.
 
-Tech Stack: Lambda, DynamoDB, S3, Terraform, API Gateway
+## Progress
+| Week | Topic | Status |
+|------|-------|--------|
+| 1 | Environment & Git/GitHub foundations | ✅ Complete |
+| 2 | Terraform, Jest, Postman, TypeScript template | 🔄 In progress |
+| 3 | Core AWS services & first serverless API | ⬜ Upcoming |
 
-Goals: 2-3 production-quality AWS serverless applications with aforementioned tech stack, infrastructure as code, clean GitHub portfolio, comprehensive testing, weekly habits, Well-Architectured reviews, establish professional workflows, establish career durability that AI can't replace.
+## Structure
+Each week ships a working deliverable. Code is written before AI is consulted.
 
-## Branch Strategy
-
-Branches follow the format `type/description`. Never commit directly to main.
-Ex.
-
-- feat/description
-- docs/description
-- test/description
-- chore/description
-- fix/description
-  All changes go through a PR with a description before merging.
+## Setup
+\```bash
+git clone https://github.com/jaxjoelliott/aws-learning-lab.git
+cd aws-learning-lab
+npm install
+cp .env.example .env
+\```
