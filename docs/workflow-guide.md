@@ -22,13 +22,19 @@
 
 ## Push
 
-**CLI:** `git push (-set-upstream origin new-branch-name if needed)`
+**CLI:** `git push`
+**CLI (new branch)** `git push --set-upstream origin branch name`
 **VS Code:** Source control panel, three dots next to changes, click push in menu
+
+## Pull latest changes
+
+**CLI:** `git pull`
+**VS Code:** Source Control panel, three dots, click Pull
 
 ## Open a PR
 
 **CLI:** `gh pr create` then add title and body message
-**VS Code:** GitHub Pull Request extension,
+**VS Code:** GitHub Pull Request extension, add title/comments, click Create, then confirm
 
 ## Merge a PR
 
@@ -43,5 +49,5 @@
 
 ## View branches
 
-**CLI (local):## `git branch`
-**CLI (remote):## `git branch -r`
+**CLI (local):** `git branch`
+**CLI (remote):** `git branch -r`
