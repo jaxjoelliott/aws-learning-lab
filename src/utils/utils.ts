@@ -1,3 +1,8 @@
+/**
+ * Utility functions — practice targets for Jest unit testing.
+ * These will be replaced by Lambda handler utilities in week 3.
+ */
+
 export function dateToString(date: Date): string {
   return date.toISOString();
 }

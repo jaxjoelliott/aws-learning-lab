@@ -2,12 +2,9 @@
   "name": "aws-learning-lab",
   "version": "1.0.0",
   "description": "A 12-week structured build program learning basics of AWS serverless development documented in one Github repository.",
-  "main": "index.js",
-  "directories": {
-    "doc": "docs"
-  },
+  "main": "dist/index.ts",
   "scripts": {
-    "lint": "eslint src/**/*.ts",
+    "lint": "eslint 'src/**/*.ts'",
     "test": "jest",
     "format": "prettier --write .",
     "build": "tsc",
@@ -17,7 +14,15 @@
     "type": "git",
     "url": "git+https://github.com/jaxjoelliott/aws-learning-lab.git"
   },
-  "keywords": [],
+  "keywords": [
+    "aws",
+    "serverless",
+    "learning",
+    "lab",
+    "typescript",
+    "lambda",
+    "terraform"
+  ],
   "author": "Jackson Elliott",
   "license": "ISC",
   "type": "commonjs",
@@ -38,7 +43,7 @@
     "lint-staged": "^16.4.0",
     "prettier": "^3.8.3",
     "ts-jest": "^29.4.9",
-    "typescript": "^6.0.2",
+    "typescript": "^6.0.3",
     "typescript-eslint": "^8.58.2"
   },
   "lint-staged": {
