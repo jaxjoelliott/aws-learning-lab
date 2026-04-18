@@ -312,3 +312,16 @@ Setup dotenv with repo
 5. What questions do I still have? - I still have questions about apis, more specifically how they work in practice/what is the http actually for? Need to do a project to fully understand.
 6. What would I do differently? - Watch more videos on specific topics. Watched one on jest mock tests and it made way more sense than just docs.
 7. Am I on track? Yes - see above takeaways.
+
+## Day 7 — Week 1 Finished
+
+**What did I do today?** Touched up repo, fixed typos, incorrect syntax, hierarchical mistakes/directory fixing.
+Went over Git merge vs rebase:
+
+Merge: combines two branches, preserving commit history as it happened.
+Use when: merging a feature into main, or to preserve exact history
+
+Rebase: replays your branch commits on top of the latest main, history looks like branch from end.
+Use when: main has moved ahead of your feature branch, or you want a clean linear history
+
+NEVER REBASE A BRANCH OTHER PEOPLE ARE WORKING ON!
