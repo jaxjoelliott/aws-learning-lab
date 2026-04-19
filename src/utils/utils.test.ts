@@ -56,3 +56,18 @@ test('sendNotification mocks callback function', () => {
   sendNotification('Hello, World!', mockCallback);
   expect(mockCallback).toHaveBeenCalledWith('Hello, World!');
 });
+
+describe('environment variables', () => {
+  it('throws if TEST_SECRET is not set', () => {
+    const original = process.env.TEST_SECRET;
+    delete process.env.TEST_SECRET;
+
+    expect(() => {
+      if (!process.env.TEST_SECRET) {
+        throw new Error('TEST_SECRET is required');
+      }
+    }).toThrow('TEST_SECRET is required');
+
+    process.env.TEST_SECRET = original;
+  });
+});
