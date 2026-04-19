@@ -65,6 +65,7 @@ web_modules/
 
 # Terraform state files
 *.tfstate
+*.tfstate.backup
 .terraform/
 
 # Output of 'npm pack'
