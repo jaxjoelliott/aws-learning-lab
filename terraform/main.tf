@@ -1,5 +1,5 @@
+#Hello World! Terraform with S3 bucket
 #provider resource
-
 terraform {
   required_providers {
     aws = {
