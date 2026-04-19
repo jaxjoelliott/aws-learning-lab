@@ -64,7 +64,7 @@ web_modules/
 .node_repl_history
 
 # Terraform state files
-.tfstate
+*.tfstate
 .terraform/
 
 # Output of 'npm pack'
