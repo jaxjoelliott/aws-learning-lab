@@ -305,7 +305,7 @@ Setup dotenv with repo
 
 ## Weekly Reflection Questions
 
-1. Wha did I build this week? - Full Git workflow in both CLI and VS Code. Created repo. Github Actions CI pipeline running lint and tests on push. Lambda and SQS demos in console, ESLint and Prettier configured, 10 unit tests, postman environment, dotenv2
+1. What did I build this week? - Full Git workflow in both CLI and VS Code. Created repo. Github Actions CI pipeline running lint and tests on push. Lambda and SQS demos in console, ESLint and Prettier configured, 10 unit tests, postman environment, dotenv2
 2. What was harder than expected? - Reading the docs and implementing that information into building out on my own. Resisting urge to vibe code.
 3. What was easier than expected? - Building the structure/hierarchy of the repo, folders/files are in self-explanatory directories.
 4. What do I understand now that I didn't before? - I now understand the whole git workflow and how to do it, basics of aws services and how typescript works, and prettier and eslint.
