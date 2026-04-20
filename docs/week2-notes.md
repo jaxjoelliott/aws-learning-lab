@@ -53,3 +53,53 @@ Parameterize bucket name via variable output bucket ARN, add to repo
 **What do I still not fully understand?** The full process of creating APIs and then calling them, need reps badly.
 
 **What do I understand now that I didn't before?** The .env.example documents what variables an app needs without exposing the real values. .evn has real values and is never committed. Continuous integration uses GitHub secrets. Production uses AWS Systems Manager Parameter store, the code just reads process.env (doesn't store anything permanently) and variables are injected at runtime.
+
+## Day 3 - Jira + Project Arc
+
+Setup Jira, Created AWS Learning Lab workspace and Epic 1 Workflow Foundations and Epic 2 Job Application Tracker
+
+Project Idea: Job Application Tracker
+
+main object in JS:
+
+const app = {
+id (UUID)
+date_applied(string):
+status:
+company:
+position:
+wage:
+link:
+contact(phone or email as string):
+free notes(string):
+};
+
+CRUD API:
+POST /applications create a new application
+GET /applications get all applications
+GET /applications/{id} get one application
+PUT /applications/{id} update an application
+DELETE /applications/{id} delete an application
+
+Table: job-applications
+Partition key: id (String)
+GSI: status-index (status)
+
+Lambda:
+POST /applications → createApplication
+GET /applications → listApplications
+GET /applications/{id} → getApplication
+PUT /applications/{id} → updateApplication
+DELETE /applications/{id} → deleteApplication
+
+Backend: Client → API Gateway → Lambda → DynamoDB
+
+## Weekly Reflection Questions
+
+1. What did I build this week? - Terraform hello-world S3 bucket, .env.example and secrets handling, Github Actions secret injection, Jira project.
+2. What was harder than expected? - Understanding the implementation with the shallow level of practice - definitely need more reps.
+3. What was easier than expected? - Getting a grasp on basic concepts.
+4. What do I understand now that I didn't before? - I now understand what Terraform is and why is is useful and standard, secret handling as a concept, and Jira basics and it's use case.
+5. What questions do I still have? - I still have questions on how people learned these concepts before AI, as well as why learning this stuff matters if AI is so good at it already and will only get better.
+6. What would I do differently? - Mess around with what I build a little more before moving on.
+7. Am I on track? Yes
