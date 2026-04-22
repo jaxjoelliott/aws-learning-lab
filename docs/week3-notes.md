@@ -25,3 +25,11 @@ Changed runtime to Node 22 instead of 26,
 1. What an IAM role is and why Lambda uses one instead of user credentials - IAM role is a flag with policies that can be attached to a tool or account to determine it's permissions. Lambda uses it because it does not need permanent credentials, but only occasional checks.
 2. The two policies your Lambda role needs and what each one does - AWSLambdaBasicExecutionRole gives Lambda permission to create log groups, streams, and write events to CloudWatch. AWSdynamodbfullaccess gives full access to dynamodb.
 3. What a cold start is and where you see it in the logs - A cold start is when receiving a new request to run code aws has to create a new runtime from scratch, can be seen in Init Duration. Same function ran 20x faster when warm. 31ms > 1.73ms.
+
+# Day 2 -
+
+Created scaffolding for job-tracker project
+
+Removed build command from CI pipeline, only need Lint/Prettier checking.
+
+Created DynamoDB table resource in main.tf
