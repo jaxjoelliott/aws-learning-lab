@@ -26,10 +26,22 @@ Changed runtime to Node 22 instead of 26,
 2. The two policies your Lambda role needs and what each one does - AWSLambdaBasicExecutionRole gives Lambda permission to create log groups, streams, and write events to CloudWatch. AWSdynamodbfullaccess gives full access to dynamodb.
 3. What a cold start is and where you see it in the logs - A cold start is when receiving a new request to run code aws has to create a new runtime from scratch, can be seen in Init Duration. Same function ran 20x faster when warm. 31ms > 1.73ms.
 
-# Day 2 -
+# Day 2 - Start Job Tracker Project
 
 Created scaffolding for job-tracker project
 
 Removed build command from CI pipeline, only need Lint/Prettier checking.
 
-Created DynamoDB table resource in main.tf
+Created DynamoDB table resource in main.tf.
+
+createApplication handler — parses body, generates UUID, writes to DynamoDB. try/catch returns 400 on bad input. Mocked DynamoDB client in tests so no real AWS calls made.
+
+Deployed Lambda by compiling TypeScript to JS first — Lambda can't run .ts directly. Zipped dist/ and node_modules/ together. Handler path must match compiled output: dist/handlers/createApplication.handler. TABLE_NAME set as environment variable so code isn't hardcoded to a specific table.
+
+**What did I build?** DynamoDb table provisioned with Terraform, createApplication Lambda, error handling, two unit tests, item written to DynamoDB with AWS console.
+
+**What broke?** TypeScript file doesn't work in Lambda, compiled it to JS.
+
+**What do I still not fully understand?** All the conventions and files needed for Lambda functions, always need try & catch? Need more experience for structure to click. - Yes, try/catch is not optional in production code.
+
+**What do I understand now that I didn't before?** Basics of setting up DynamoDB table and Lambda function, need fields, how to access through AWS console.
