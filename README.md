@@ -16,11 +16,12 @@ comprehensive testing, CI/CD pipelines, and Well-Architected reviews.
 
 ## Progress
 
-| Week | Topic                                         | Status      |
-| ---- | --------------------------------------------- | ----------- |
-| 1    | Environment & Git/GitHub foundations          | ✅ Complete |
-| 2    | Terraform, Jest, Postman, TypeScript template | ✅ Complete |
-| 3    | Core AWS services & first serverless API      | ⬜ Upcoming |
+| Week | Topic | Status |
+|------|-------|--------|
+| 1 | Environment & Git/GitHub foundations | ✅ Complete |
+| 2 | Terraform, Jest, Postman, TypeScript template | ✅ Complete |
+| 3 | Core AWS services & first serverless API | 🔄 In Progress |
+| 4 | Job Tracker — full CRUD API | ⬜ Upcoming |
 
 ## Structure
 
