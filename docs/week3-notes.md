@@ -64,6 +64,6 @@ Stages for an API are different configs for different stages of development/depl
 
 **What broke?** listApplications.ts had keywords status and position overlapping with DynamoDB keywords. Implemented error checking and found in CloudWatch. Reserved keywords in DynamoDB (status, position, name, etc.) must be aliased with ExpressionAttributeNames when used in expressions. Use #alias syntax.
 
-**What do I still not fully understand?** How did people create these things before AI? Where does AI fit into the future of development? Docs/error messages take so long to navigate. For Jira, how do companies standardize ticket creation/fulfillment?
+**What do I still not fully understand?** How did people create these things before AI? Where does AI fit into the future of development? Docs/error messages take so long to navigate. For Jira, how do companies standardize ticket creation/fulfillment? - Definition of Ready (what ticket needs before work) and Definition of Done (what must be true before closure).
 
 **What do I understand now that I didn't before?** I understand how to test APIs with Postman, Lambda function creation/configuration, and navigation of AWS console overall.
