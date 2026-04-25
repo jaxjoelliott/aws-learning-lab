@@ -46,10 +46,24 @@ Deployed Lambda by compiling TypeScript to JS first — Lambda can't run .ts dir
 
 **What do I understand now that I didn't before?** Basics of setting up DynamoDB table and Lambda function, need fields, how to access through AWS console.
 
-## Day 3 - API Gateway
+## Day 3 - API Gateway & Lambda Functions
 
 HTTP API: basic API, cheap and fast, good for CRUD backend.
 
 Integrations define what to do when your API URL gets hit.
 
 Stages for an API are different configs for different stages of development/deployment (dev, staging, prod).
+
+1. What a path parameter is and how you access it in Lambda - path parameters allow specification of certain variables in a URL, accessed by passing through event object.
+2. What ProjectionExpression does in a DynamoDB scan - expresses which fields to retrieve from a table.
+3. The difference between Item and Items in DynamoDB responses — and which commands return which - Item is an individual item object, Items is the table of them, GetCommand returns Item, ScanCommand returns Items (array). UpdateCommand and DeleteCommand return Attributes if you request it with ReturnValues.
+
+## Day 4 - Postman Testing
+
+**What did I build?** Created, tested, and saved CRUD API requests in Postman collection and added to Job-Tracker repo.
+
+**What broke?** listApplications.ts had keywords status and position overlapping with DynamoDB keywords. Implemented error checking and found in CloudWatch. Reserved keywords in DynamoDB (status, position, name, etc.) must be aliased with ExpressionAttributeNames when used in expressions. Use #alias syntax.
+
+**What do I still not fully understand?** How did people create these things before AI? Where does AI fit into the future of development? Docs/error messages take so long to navigate. For Jira, how do companies standardize ticket creation/fulfillment?
+
+**What do I understand now that I didn't before?** I understand how to test APIs with Postman, Lambda function creation/configuration, and navigation of AWS console overall.
