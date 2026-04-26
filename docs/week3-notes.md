@@ -67,3 +67,41 @@ Stages for an API are different configs for different stages of development/depl
 **What do I still not fully understand?** How did people create these things before AI? Where does AI fit into the future of development? Docs/error messages take so long to navigate. For Jira, how do companies standardize ticket creation/fulfillment?
 
 **What do I understand now that I didn't before?** I understand how to test APIs with Postman, Lambda function creation/configuration, and navigation of AWS console overall.
+
+## Day 5 - S3 Bucket exercise
+
+S3 — Simple Storage Service. Stores any file as an object in a bucket. Objects accessed by key. Scales infinitely, cheap storage. Not a database — no querying, just put/get by key.
+
+Lambda - Stores function code to run when triggered by certain events. Code can run for max of 15 minutes, charged by ms.
+
+API Gateway - Sits in front of API calls to handle configuration, direction, and traffic.
+
+DynamoDB - Automatically scalable, serverless, NoSQL database that supports quick access to data.
+
+CloudWatch - Collects logs, metrics, and events from AWS. Great for debugging and tracking performance
+
+IAM - Configures who and what can access AWS resources. Users have permanent credentials, roles are temporarily assumed by services. Polices attached to roles define allowed actions.
+
+## Day 6 - DVA-C02 domain skim
+
+Gap list by domain:
+
+Domain 1 - Development gaps: Dead-letter queues, Lambda Destinations, DynamoDB consistency models, high-cardinality partition keys, streaming data, EventBridge patterns, sync vs async patterns, orchestration/fanout, microservices patterns. Covered Weeks 6-7.
+
+Domain 2 - Security gaps: Encryption at rest/in transit, Cognito auth, bearer tokens, fine-grained IAM, data sanitization, secrets encryption. Covered Weeks 5 and 8.
+
+Domain 3 - Deployment gaps: AWS SAM concepts, Lambda aliases, environment promotion, integration testing patterns. Covered Weeks 9-10.
+
+Domain 4 - Troubleshooting gaps: Structured logging, custom metrics, X-Ray tracing, concurrency limits, performance optimization, CloudWatch alarms. Covered Weeks 5 and 10.
+
+Concepts clarified today:
+
+Mocking the SDK — jest.mock('@aws-sdk/lib-dynamodb') replaces the real library with a fake so tests don't make real network calls.
+
+SDK vs service — DynamoDB is the service, @aws-sdk/lib-dynamodb is the library you use to talk to it.
+
+Logging vs monitoring vs observability — logging records info, monitoring watches for changes, observability is how well the system can be understood from its outputs.
+
+Concurrency in Lambda — how many function instances run simultaneously. 100 requests = 100 instances. Has account-level limits.
+
+Overall assessment: Strongest domain is Deployment. Biggest gaps are Security and Troubleshooting. Most gaps covered by Week 10.
