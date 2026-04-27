@@ -105,3 +105,38 @@ Logging vs monitoring vs observability — logging records info, monitoring watc
 Concurrency in Lambda — how many function instances run simultaneously. 100 requests = 100 instances. Has account-level limits.
 
 Overall assessment: Strongest domain is Deployment. Biggest gaps are Security and Troubleshooting. Most gaps covered by Week 10.
+
+## Day 7 - AWS Introduction to Serverless Development Course
+
+What was new that you didn't know?
+
+- Resource policy allows function to be triggers, execution role determines resources that function can interact with.
+- One repository per service.
+- SAM is similar to Terraform but only for AWS, Terraform can be used with Azure/other providers.
+
+1. What did I build this week? - Repository for ApplicationFlow, 5 Lambda functions with tests, CRUD API requests in Postman collection
+2. What was harder than expected? - Building functions back to back with similar structure but minute differences and then deploying them with AWS console.
+3. What do I understand now that I didn't before? - I understand why Terraform is so useful, it would've saved me a lot of time. I understand the core AWS services more, and the domains on the DVA-C02.
+4. Am I on track? Yes
+
+### Key Takeaway Questions
+
+5. When would you use Lambda vs EC2?
+
+Lambda runs only when triggered by an event — pay per invocation, max 15 minutes, no server management. EC2 is a virtual server that runs 24/7 — pay per hour, no time limit, you manage the OS. Use Lambda for short event-driven tasks. Use EC2 for always-on workloads or long-running processes.
+
+2. What is the purpose of IAM roles vs IAM users?
+
+IAM users have permanent credentials for humans logging into AWS. IAM roles are assumed temporarily by services like Lambda — no permanent credentials, just policies that define what the service is allowed to do.
+
+3. How does data flow from API Gateway → Lambda → DynamoDB?
+
+Client sends HTTP request → API Gateway matches the route and forwards it as an event to Lambda → Lambda runs the handler → handler sends a command to DynamoDB → DynamoDB responds → Lambda returns response → API Gateway sends it back to the client.
+
+4. What is the difference between S3 and DynamoDB?
+
+S3 stores files and objects accessed by key — no querying, just put and get. DynamoDB stores structured data accessed by partition key — supports queries, scans, and commands like put, get, update, delete.
+
+5. Why does CloudWatch matter for serverless applications?
+
+CloudWatch provides logs (what happened), metrics (invocation count, duration, error rate over time), and alarms (notifications when a metric crosses a threshold). Critical for serverless because you have no server to SSH into — CloudWatch is your only window into what your functions are doing.
