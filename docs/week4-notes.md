@@ -21,3 +21,17 @@ Built:
 Used template from Terraform Hello World and Terraform docs to create, not too difficult. Deleted the manually created roles, DynamoDB table and Lambda functions for a clean slate.
 
 Pattern: IAM role, policy, then policy attachment, then resource assuming that role.
+<<<<<<< HEAD
+
+## Day 2 - Complete Infrastructure as Code for ApplicationFlow
+
+Finished creating all five functions, policies, and policy attachments in terraform file. All functions and table infrastructure is now code. Tested in AWS Console.
+
+Added API Gateway resource and configuration for all routes in Terraform.
+
+Backlog for Application-Flow:
+
+1. listApplications — format/sort the response output
+2. deleteApplication — return a confirmation message like { "message": "Application deleted" }
+3. updateApplication — make fields optional, build UpdateExpression dynamically from whatever fields are in the body
+   > > > > > > > origin/main
