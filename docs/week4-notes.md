@@ -34,4 +34,23 @@ Backlog for Application-Flow:
 1. listApplications — format/sort the response output
 2. deleteApplication — return a confirmation message like { "message": "Application deleted" }
 3. updateApplication — make fields optional, build UpdateExpression dynamically from whatever fields are in the body
+4. Status validation for applications.
    > > > > > > > origin/main
+
+## Day 3 - GitHub Actions/Secrets Handling for ApplicationFlow
+
+Implemented standard CI/CD pattern: code change > push > pipeline runs tests > deploys to AWS
+
+What is working:
+All infrastructure managed by Terraform
+State stored in S3
+GitHub Actions deploys on every push to main
+All five Lambda functions are behind API Gateway.
+
+### Reflections
+
+**What did I build?** GitHub Actions CI/CD pipeline that automatically runs lint and tests on every push.
+
+**What broke?** Deployment failed due to Terraform state being stored locally, fixed it by storing it in an S3 bucket.
+
+**What do I still not fully understand?** How this backend works with a real live frontend.
