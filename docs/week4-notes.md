@@ -33,5 +33,5 @@ Backlog for Application-Flow:
 
 1. listApplications — format/sort the response output
 2. deleteApplication — return a confirmation message like { "message": "Application deleted" }
-3. # updateApplication — make fields optional, build UpdateExpression dynamically from whatever fields are in the body
+3. updateApplication — make fields optional, build UpdateExpression dynamically from whatever fields are in the body
    > > > > > > > origin/main
