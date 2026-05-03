@@ -54,3 +54,7 @@ All five Lambda functions are behind API Gateway.
 **What broke?** Deployment failed due to Terraform state being stored locally, fixed it by storing it in an S3 bucket.
 
 **What do I still not fully understand?** How this backend works with a real live frontend.
+
+## Day 4 - Postman Testing
+
+Created Postman environment and collection for ApplicationFlow. Fully tested each API request, committed collection to repo.
