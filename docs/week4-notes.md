@@ -35,7 +35,6 @@ Backlog for Application-Flow:
 2. deleteApplication — return a confirmation message like { "message": "Application deleted" }
 3. updateApplication — make fields optional, build UpdateExpression dynamically from whatever fields are in the body
 4. Status validation for applications.
-   > > > > > > > origin/main
 
 ## Day 3 - GitHub Actions/Secrets Handling for ApplicationFlow
 
