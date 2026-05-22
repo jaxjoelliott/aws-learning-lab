@@ -30,11 +30,25 @@ Added structured logs to createApplication Lambda when request is received, (inc
 
 ## Day 2 - CloudWatch Alarms
 
-**What did I build?**
+Three alarms to create: errors, throttles, duration
 
-**What broke**
+Threshold: number/anomaly the metric must breach to trigger alarm.
 
-**What do I still not fully understand?**
+Datapoints: Metrics checked every x minutes/period. If metric exceeds threshold in however many periods it fires alarm.
+
+Missing data treatment: When function is idle, you have three options:
+
+- Treat as missing: ignore the gap, don't change alarm state. - Best for errors because no invocations means no errors.
+- Treat as breaching: silence counts as a problem. Use this when "not hearing from it" is itself alarming.
+- Treat as good: silence counts as everything being fine.
+
+Rule of thumb for alarms: Set at 80% of timeout.
+
+**What did I build?** Three CloudWatch alarms for createApplication Lambda, for errors, throttles, and duration.
+
+**What broke** Nothing broke today, just in AWS Console creating alarms. CloudWatch didn't show Lambda metrics until I invoked a function.
+
+**What do I still not fully understand?** How to optimize datapoints on alarms.
 
 ## Day 3 - IAM Least Privilege Audit
 
