@@ -52,6 +52,26 @@ Rule of thumb for alarms: Set at 80% of timeout.
 
 ## Day 3 - IAM Least Privilege Audit
 
+All Lambdas shared a singular basic_lambda_role that had all needed policies attached.
+
+The role is the identity that a Lambda function assumes when it runs. The policies define what that identity is allowed to do. You never attach permissions directly to a function, you attach them to a role, and the function assumes that role at runtime.
+
+Common pattern for Terraform:
+
+main.tf for provider and backend config
+iam.tf for all IAM roles and policies
+lambda.tf for Lambda functions
+api_gateway.tf for API Gateway resources
+dynamodb.tf for DynamoDB tables
+variables.tf for variables
+outputs.tf for outputs
+
+**What did I build?** Refactored entire IAM setup from one role to five least privilege roles, scoped to function needs.
+
+**What broke** Nothing broke, Terraform planned and applied cleanly. All endpoints worked after.
+
+**What do I still not fully understand?** How are terraform files structured to handle lots of resources?
+
 ## Day 4 - Well-Architected Review
 
 ## Day 5 - Backlog and Reflection
