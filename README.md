@@ -18,11 +18,12 @@ comprehensive testing, CI/CD pipelines, and Well-Architected reviews.
 
 | Week | Topic | Status |
 |------|-------|--------|
-| 1 | Environment & Git/GitHub foundations | ✅ Complete |
-| 2 | Terraform, Jest, Postman, TypeScript template | ✅ Complete |
-| 3 | Core AWS services & first serverless API | ✅ Complete |
-| 4 | Job Tracker — full CRUD API | ✅ Complete |
-| 5 | Well-Architectured Review | 🔄 In Progress |
+| 1 | Environment & Git/GitHub foundations | Complete |
+| 2 | Terraform, Jest, Postman, TypeScript template | Complete |
+| 3 | Core AWS services & first serverless API | Complete |
+| 4 | Job Tracker — full CRUD API | Complete |
+| 5 | Well-Architectured Review | Complete |
+| 6 | Simple Notification Service | In Progress |
 ## Structure
 
 Each week ships a working deliverable. Code is written before AI is consulted.
