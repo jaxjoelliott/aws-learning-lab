@@ -16,4 +16,10 @@ Visibility Timeout - when a component receives a message, while it is being proc
 
 **What do I still not fully understand?** Configuration setting for SQS other than DLQ and visibility timeout.
 
-## Day 2 -
+## Day 2 - Terraform Foundation
+
+**What did I build?** Terraform infrastructure for project: IAM roles, policies, attachments with scoped permissions, SQS main queue with DLQ & redrive, DynamoDB table, Lambda stubs, remote state in S3
+
+**What broke** Terraform apply failed first time because I forgot to delete the manual SQS queue I tested yesterday with the same name.
+
+**What do I still not fully understand?** SQS Redrive - tells SQS where and when to move a failed message
