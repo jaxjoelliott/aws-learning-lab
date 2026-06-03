@@ -23,3 +23,29 @@ Visibility Timeout - when a component receives a message, while it is being proc
 **What broke** Terraform apply failed first time because I forgot to delete the manual SQS queue I tested yesterday with the same name.
 
 **What do I still not fully understand?** SQS Redrive - tells SQS where and when to move a failed message
+
+## Day 3 - Core Lambda Logic
+
+1. What should submitJob do step by step? List every action in order. - submitJob receives the HTTP request, validates body, generates ID, writes record to DynamoDB with PENDING status, sends SQS message with ID, returns 202 with ID
+2. What should processJob do step by step? List every action in order. - processJob is triggered by SQS, reads ID, fetches record from DynamoDB, updates status to PROCESSING, does the "work", updates status to COMPLETED, returns nothing.
+3. What does the SQS message contain — the full job payload or just the job ID? Why? - Just the job ID because the full payload would be too much and we can differentiate with just ID.
+
+**What did I build?** submitJob and processJob Lambda handlers, Lint and Prettier configs, Typescript config, IAM permissions for Lambdas, SQS event source mapping
+
+**What broke** During first test, worker Lambda needed updateItem DynamoDB permission, added it in iam.tf
+
+**What do I still not fully understand?** How do people get so good at this stuff where it becomes second nature? I feel as though AI is carving a path for me.
+
+1. Why does the worker need UpdateItem but not the submit Lambda? - The submit Lambda is only creating an item, so it only needs PutItem, worker has to update the status so it needs to edit existing items.
+2. What happens to a message if the worker crashes mid-processing? - The visibility timeout ends, then the message reappears and is taken by the next available worker. If a message is processed and already has a status of PROCESSING or COMPLETED, then the message is skipped by the worker.
+3. Why does the event source mapping need GetQueueAttributes? - To inspect the queue config to ensure the queue is compatible.
+
+## Day 4 - Core Lambda Logic
+
+1. What should getJobStatus do step by step? - Extract jobID from the URL path, fetch the record from DynamoDB, if not found return 404, if found return 200 with status
+
+**What did I build?** getJobStatus Lambda handler, API gateway with routes for both endpoints, DLQ tested, CloudWatch Alarm for DLQ
+
+**What broke** DLQ wasn't receiving messages, intentional error throw was not rethrown in catch, so Lambda didn't fail to run.
+
+**What do I still not fully understand?** Why have try/catch block with DLQ - Try/Catch handles error gracefully at code level and logs what went wrong, DLQ handles failure at infrastructure so they don't retry forever.
